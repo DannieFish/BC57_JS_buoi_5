@@ -54,42 +54,42 @@ document.getElementById('electric_bill').onclick = function () {
 
 }
 document.getElementById('calculate_tax').onclick = function () {
-    
+
     var soNguoiPhuThuoc = document.getElementById('less_tax').value;
     var hoVaTen = document.getElementById('user_taxed').value;
     var luongThue = 1 * document.getElementById('salary_get_taxed').value - 4000000 - soNguoiPhuThuoc * 1600000;
-    
+
 
     var tinhTienThue = 0;
 
-    if(luongThue <= 0){
+    if (luongThue <= 0) {
         tinhTienThue = luongThue * 0;
         alert("Số tiền không hợp lệ")
-        document.getElementById('result_tax').innerHTML ="Họ tên: " + hoVaTen + " ,Số tiền bị đánh thuế: " + formatNumber(tinhTienThue);
-    }else if(luongThue <= 6e7){
+        document.getElementById('result_tax').innerHTML = "Họ tên: " + hoVaTen + " ,Số tiền bị đánh thuế: " + formatNumber(tinhTienThue);
+    } else if (luongThue <= 6e7) {
         tinhTienThue = luongThue * 0.05;
-        document.getElementById('result_tax').innerHTML ="Họ tên: " + hoVaTen + " ,Số tiền bị đánh thuế: " + formatNumber(tinhTienThue);
-    }else if(luongThue > 6e7 && luongThue <= 120e6){
+        document.getElementById('result_tax').innerHTML = "Họ tên: " + hoVaTen + " ,Số tiền bị đánh thuế: " + formatNumber(tinhTienThue);
+    } else if (luongThue > 6e7 && luongThue <= 120e6) {
         tinhTienThue = luongThue * 0.1;
-        document.getElementById('result_tax').innerHTML ="Họ tên: " + hoVaTen + " ,Số tiền bị đánh thuế: " + formatNumber(tinhTienThue);
-    }else if(luongThue > 120e6 && luongThue <= 210e6){
+        document.getElementById('result_tax').innerHTML = "Họ tên: " + hoVaTen + " ,Số tiền bị đánh thuế: " + formatNumber(tinhTienThue);
+    } else if (luongThue > 120e6 && luongThue <= 210e6) {
         tinhTienThue = luongThue * 0.15;
-        document.getElementById('result_tax').innerHTML ="Họ tên: " + hoVaTen + " ,Số tiền bị đánh thuế: " + formatNumber(tinhTienThue);
-    }else if(luongThue > 210e6 && luongThue <= 384e6){
+        document.getElementById('result_tax').innerHTML = "Họ tên: " + hoVaTen + " ,Số tiền bị đánh thuế: " + formatNumber(tinhTienThue);
+    } else if (luongThue > 210e6 && luongThue <= 384e6) {
         tinhTienThue = luongThue * 0.2;
-        document.getElementById('result_tax').innerHTML ="Họ tên: " + hoVaTen + " ,Số tiền bị đánh thuế: " + formatNumber(tinhTienThue);
-    }else if(luongThue > 384e6 && luongThue <= 624e6){
+        document.getElementById('result_tax').innerHTML = "Họ tên: " + hoVaTen + " ,Số tiền bị đánh thuế: " + formatNumber(tinhTienThue);
+    } else if (luongThue > 384e6 && luongThue <= 624e6) {
         tinhTienThue = luongThue * 0.25;
-        document.getElementById('result_tax').innerHTML ="Họ tên: " + hoVaTen + " ,Số tiền bị đánh thuế: " + formatNumber(tinhTienThue);
-    }else if(luongThue > 624e6 && luongThue <= 960e6){
+        document.getElementById('result_tax').innerHTML = "Họ tên: " + hoVaTen + " ,Số tiền bị đánh thuế: " + formatNumber(tinhTienThue);
+    } else if (luongThue > 624e6 && luongThue <= 960e6) {
         tinhTienThue = luongThue * 0.3;
-        document.getElementById('result_tax').innerHTML ="Họ tên: " + hoVaTen + " ,Số tiền bị đánh thuế: " + formatNumber(tinhTienThue);
-    }else if(luongThue > 960e6 ){
+        document.getElementById('result_tax').innerHTML = "Họ tên: " + hoVaTen + " ,Số tiền bị đánh thuế: " + formatNumber(tinhTienThue);
+    } else if (luongThue > 960e6) {
         tinhTienThue = luongThue * 0.35;
-        document.getElementById('result_tax').innerHTML ="Họ tên: " + hoVaTen + " ,Số tiền bị đánh thuế: " + formatNumber(tinhTienThue);
+        document.getElementById('result_tax').innerHTML = "Họ tên: " + hoVaTen + " ,Số tiền bị đánh thuế: " + formatNumber(tinhTienThue);
     }
 }
 
-function formatNumber(number){
+function formatNumber(number) {
     return new Intl.NumberFormat('vn-VN', { style: 'currency', currency: 'VND' }).format(number)
 }

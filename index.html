@@ -110,12 +110,48 @@
         </div>
         <hr>
         <h1>Tính thuế thu nhập cá nhân</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Thu nhập chịu thuế(triệu)</td>
+                    <td>Thuế suất (%)</td>
+                </tr>
+                <tr>
+                    <td>Đến 60</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>Trên 60 đến 120</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>Trên 120 đến 210</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td>Trên 210 đến 384</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>Trên 384 đến 624</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td>Trên 624 đến 960</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>Trên 960</td>
+                    <td>35</td>
+                </tr>
+            </thead>
+        </table>
         <input type="text" id="user_taxed" placeholder="Họ và tên">
         <input type="text" id="salary_get_taxed" placeholder="Lương hàng năm">
         <input type="text" id="less_tax" placeholder="Số người phụ thuộc">
         <button id="calculate_tax">Tính thuế</button>
         <label for="" id="result_tax"></label>
-        
+
     </div>
 
 
