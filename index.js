@@ -93,3 +93,36 @@ document.getElementById('calculate_tax').onclick = function () {
 function formatNumber(number) {
     return new Intl.NumberFormat('vn-VN', { style: 'currency', currency: 'VND' }).format(number)
 }
+function formatNumberUsd(number1) {
+    return new Intl.NumberFormat('us-US', { style: 'currency', currency: 'USD' }).format(number1)
+}
+function appearChannel() {
+    var giaTriKhachHang = document.getElementById('business_house').value;
+    var connectionBusiness = document.getElementById('connection_business');
+    if (giaTriKhachHang == 2) {
+        connectionBusiness.classList.remove('d-none');
+    } else {
+        connectionBusiness.classList.add('d-none');
+    }
+}
+document.getElementById('business_house').addEventListener('change', appearChannel);
+document.getElementById('calculate_channel').onclick = function () {
+
+    var giaTriKhachHang = +document.getElementById('business_house').value;
+    var soKenhCaoCap = +document.getElementById('channels').value;
+    var maKhachHang = document.getElementById('client_id').value;
+    var capBusiness = +document.getElementById('connection_business').value ;
+    
+    var tinhTongCap = 0;
+    if (giaTriKhachHang == 1) {
+        tinhTongCap = 4.5 + 20.5 + (soKenhCaoCap * 7.5);
+        document.getElementById('result_channel').innerHTML = "Mã khách hàng: " + maKhachHang + " Tổng tiền cáp: " + formatNumberUsd(tinhTongCap);
+    } else if (giaTriKhachHang == 2) {
+
+        tinhTongCap = 15 + 75 + (capBusiness * 5) + (soKenhCaoCap * 50);
+        document.getElementById('result_channel').innerHTML = "Mã khách hàng: " + maKhachHang + " Tổng tiền cáp: " + formatNumberUsd(tinhTongCap);
+    }
+
+
+
+}

@@ -151,7 +151,18 @@
         <input type="text" id="less_tax" placeholder="Số người phụ thuộc">
         <button id="calculate_tax">Tính thuế</button>
         <label for="" id="result_tax"></label>
-
+        <hr>
+        <h1>Tính tiền cáp</h1>
+        <select id="business_house">
+            <option value="0">X</option>
+            <option value="1">Nhà dân</option>
+            <option value="2">Doanh nghiệp</option>
+        </select>
+        <input type="text" placeholder="Mã khách hàng" id="client_id">
+        <input type="text" placeholder="Số kênh cao cấp" id="channels">
+        <input type="text" class="d-none" id="connection_business" placeholder="Số kết nối">
+        <button id="calculate_channel">Tính tiền</button>
+        <label for="" id="result_channel"></label>
     </div>
 
 
